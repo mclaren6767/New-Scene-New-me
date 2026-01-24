@@ -1,6 +1,7 @@
 import org.code.theater.*;
 
 public class TheaterRunner {
+public static void main(String[] args) {
 
     //read text files for scene classes
 
@@ -11,8 +12,8 @@ public class TheaterRunner {
 
 
     // Creates scene objects
-    lastYear lastYear = new lastYear(memories,friends,music,musicCaptions);
-    thisYear thisYear = new thisYear(images2026);
+    LastYear lastYear = new LastYear(friends,places);
+    ThisYear thisYear = new ThisYear(images2026);
 
     // Calls the methods
     lastYear.drawScene();
@@ -20,6 +21,8 @@ public class TheaterRunner {
 
     // Play scenes 
     Theater.playScenes(lastYear, thisYear);
-    
 
-  }
+}
+}
+
+  

@@ -1,28 +1,22 @@
+
 import org.code.theater.*;
 import org.code.media.*;
 
-public class thisYear extends Scene {
+public class ThisYear extends Scene {
+
+  private String[] images2026;
 
   // Variables (instance & static)
-     public thisYear() {
+     public ThisYear() {
      String[] images2026 = FileReader.toStringArray("data2.txt");
   }
   // Paramterized Constructor
-  public thisYear(String[] images2026) {
+  public ThisYear(String[] images2026) {
     this.images2026 = images2026;
   }
 
  // Constuctor
 
-    public BannerText(String text) {
-    this.text = text;
-  }
-
-    public ImageTile(String[] images) {
-    this.images = images;
-  }
-
- 
   
   /**
    * Top level drawScene method
@@ -30,8 +24,8 @@ public class thisYear extends Scene {
  
    public void drawScene() {
     drawTitleScreen ();
-    drawTiles();
-    drawBanner();
+    drawTiles(4,true);
+    drawBanner(200,50);
     drawEndScreen();
    }
   
@@ -51,7 +45,12 @@ public class thisYear extends Scene {
     int imageIndex = 0;
     for (int y = 0; y < height; y += tileSize) {
       for (int x = 0; x < width; x += tileSize) {
-        drawImage(images[imageIndex], x, y, tileSize);
+
+        if (imageIndex >= images2026.length) {
+  return; // or break out
+}
+
+        drawImage(images2026[imageIndex], x, y, tileSize);
         
         if (staggered) {
           pause(0.5); // change time
@@ -80,7 +79,7 @@ public class thisYear extends Scene {
     }
   }
 
-   */
+   
 
     
 
@@ -88,6 +87,8 @@ public class thisYear extends Scene {
   
   public void drawBanner(int yPos, int textSize) {
     setTextHeight(textSize);
+    String text = "Welcome to 2026!";
+
 
     int xPos = 400; // start on right side of screen
     int textWidth = getEstimateLengthInPixels(text, textSize);
@@ -117,7 +118,7 @@ public class thisYear extends Scene {
   
   public void drawEndScreen() {
     setEndScreenStyle();
-    setScreenColor("pink");
+    clear("pink");
     drawText("This year I want to be more productive", 10, 175);
     drawBanner(100,12);
   }
@@ -127,14 +128,9 @@ public class thisYear extends Scene {
     setTextColor("white");
     setTextStyle(Font.MONO, FontStyle.BOLD_ITALIC);
   }
-
-  
-}
-    public void drawTitleScreen() {
+  public void drawTitleScreen() {
     setTitleScreenStyle();
-    clear("blue");
-    drawText("This Year", 100, 175);
-    drawText("Memories", 140, 225);
+    clear("white");
   }
 
 
@@ -149,4 +145,6 @@ public class thisYear extends Scene {
   // other methods
   
 
-
+  
+}
+  
