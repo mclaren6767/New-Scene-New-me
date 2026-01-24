@@ -36,3 +36,5 @@ I added a picture of a collage I made that included a bunch of goals I would lik
 ## Scene API Usage
 
 Describe how you were able to use the various methods from the Scene API to create your animation. 
+
+I was able to use various methods such as a for loop to stack images on top of each other to show what I did in 2025, I also used an if statement to draw a 4x4 grid with a tile of images that finds if the size is greater than or equal to zero or less five to allow the pictures to be in perfect alignment with the screen. Some methods I used for the scene api animation would be banner text, image tiling, image stacking, and captions to allow a visual representation of the animations.
