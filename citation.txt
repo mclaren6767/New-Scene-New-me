@@ -1,0 +1,8 @@
+What I prompted:
+Find the error in this code and how to fix it and why it is wrong
+
+What I recieved:
+
+Chatgpt said that I first was missing an instances variable for friends and place, 
+second I had never intiazlied pictrues, third my defualt constructor did nothing "useful", 
+and lastly my captions and images in data1.txt did not match up so I had to add more captions.
